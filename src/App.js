@@ -8,13 +8,13 @@ function App() {
   const [cityList, setCityList] = useState([]);
 
   useEffect(()=> {
-    Axios.get('http://localhost:3001/api/get').then((response)=> {
+    Axios.get('https://nodejs-react-mysql.herokuapp.com/api/get').then((response)=> {
       setCityList(response.data);
     })
   }, [])
 
   const addCity = () =>{
-     Axios.post('http://localhost:3001/api/insert', {
+     Axios.post('https://nodejs-react-mysql.herokuapp.com/api/insert', {
        city: city
       })
         setCityList([
